@@ -1,0 +1,56 @@
+//EXAMPLE OF .env FILE:-
+In ReactJS, There we can use or make comments using # symbol.
+These Files Will Be Ignored When Uploading To Git
+
+ONLY THE CODE:- ARE THE CODES, EVERYTHING ELSE ARE COMMENTS. Exclue The Term "Code:-" when creating those files
+
+
+# REACT_APP_API_SERVER_URL = http://localhost:8000/api
+# Can Give Any Name
+# .env file should be outside src ALWAYS
+
+Code:- REACT_APP_API_URL = http://localhost:8000/api
+
+
+
+
+
+
+
+
+
+
+EXAMPLE OF .gitignore FILE:-
+
+
+Code:- # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+Code:- # dependencies
+Code:- /node_modules
+Code:- /.pnp
+Code:- .pnp.js
+
+Code:- # testing
+Code:- /coverage
+
+Code:- # production
+Code:- /build
+
+Code:- # misc
+Code:- .DS_Store
+Code:- .env.local
+Code:- .env.development.local
+Code:- .env.test.local
+Code:- .env.production.local
+
+Code:- npm-debug.log*
+Code:- yarn-debug.log*
+Code:- yarn-error.log*
+
+
+
+
+although gitignore is not written in its own file, it is excluded automatically
+
+In ReactJS, There we can use or make comments using # symbol.
+These Files Will Be Ignored When Uploading To Git

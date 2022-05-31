@@ -1,0 +1,35 @@
+/* NOTE:- THESE ARE ALL CUSTOM INBUILT SLICK ELEMENTS AS IN BOOTSTRAP CAROUSEL */
+
+* {
+  box-sizing: border-box !important;
+  margin: 0% !important;
+}
+
+.slick-next {
+  right: 0 !important;
+}
+
+.slick-prev {
+  left: 0 !important;
+  z-index: 4 !important;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  color: cadetblue !important; /* THIS IS SO AS TO DEFINE WHAT IT LOOKS LIKE BEFORE CLICKING OR ANY EVENT */
+}
+
+.slick-img-container {
+  /* width: 150px !important;                THIS WILL CAUSE THE IMAGE TO BE BOUND WITHIN CERTAIN SIZE*/
+  height: 150px !important;
+}
+
+.slick-img-container img {
+  /* width: 100% !important;             THIS WILL STRETCH THE IMAGE SO BETTER TO LEAVE THIS*/
+  height: 100% !important;
+}
+
+.slick-slide {
+  padding: 0 85px !important;
+  margin: auto !important; /* THIS WILL NOT WORK HERE  */
+}

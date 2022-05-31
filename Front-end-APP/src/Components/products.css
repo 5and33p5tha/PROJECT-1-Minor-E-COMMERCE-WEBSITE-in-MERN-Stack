@@ -1,0 +1,25 @@
+.product_container {
+  /* height: 400px !important; */
+  width: 90% !important;
+  background-color: #f5fffa !important;
+  padding-top: 5vh !important;
+}
+
+.card {
+  width: 17vw !important;
+}
+
+.card-image {
+  height: 200px !important;
+  overflow: hidden !important; /* This is given so as when image gets bigger due to transform (scale), the image will not flow outside this container */
+}
+
+.card-image img {
+  height: 100% !important;
+  transition: 2s !important; /* This is so as the image will animate slowly into bigger state */
+}
+
+.card-image img:hover {
+  transform: scale(1.5) !important;
+  cursor: grab !important; /* This is to change the cursor when hovered in */
+}

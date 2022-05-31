@@ -1,0 +1,384 @@
+Press Command+And Click On The Function in VSCode to Look For Function
+
+
+
+				TO CHECK IF OUR WEB PAGE MATCHES THE STANDARD FORMAT
+Step 1. Go To https://validator.w3.org/
+ Notes:-
+
+1.Cannot Use Font code of html, only in css.
+
+2. Cannot Use Canter Tag, Use ms-auto of bootstrap as standard.
+
+
+
+
+				JSX.
+JSX = JavaScript Syntax Extension
+We use JS and HTML codes in same pages and sometimes in same line.
+
+
+
+
+				You Need Node Js to use React:-
+If Node Js is Not Installed, 
+Go To:- https://nodejs.org/en/ and Download It.
+
+Check Node Js Version:- node -v
+
+
+
+React (also known as React. js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces based on UI components. It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.
+
+
+
+Documentation:- https://reactjs.org/docs/getting-started.html
+
+
+
+				To Create New React App.
+
+Step 1. Change Directory to where you want to create the react.
+
+Step 2. ssaannddeeeepp@Sandeeps-Air ReactJS % npx create-react-app my-react-app
+
+
+
+Here, The Directory is ssaannddeeeepp@Sandeeps-Air ReactJS %.
+
+Now to create new react app:- npx create-react-app my-react-app
+
+
+Note:- In ReactJS we use npx, we will use npm in other cases like ExpressJS
+
+
+
+				To Check all available / installed Packages:-
+
+Go to package.json file at the end in VsCode
+
+
+
+
+				To update the packages:-
+Go to package.json file at the end in VsCode.
+Then rename the numbers in the package.json and go to terminal
+Then just type:- npm install
+
+
+
+
+				To Run/Start Server:-
+code:- npm start
+
+
+
+
+				To Stop Server:-
+Type :- control + c key to stop server
+
+
+
+			React Hooks Documentation.
+
+Documentation:- https://reactjs.org/docs/hooks-intro.html
+
+
+NPX:- Node Package Execute. This Installs The Necessary React Files Automatically And Allows Us To Run Run React Without Downloading The Complete Files.
+
+NPM:- Node Package Manager
+
+
+
+
+
+				To Create A New Server (local host port, by default it is localhost3000)
+
+To Start Server:- npm start
+
+
+
+
+				To Install New Package.
+
+You can do this in one of two ways:-
+npm install 
+OR
+yarn add
+
+
+
+Note:- You can install multiple package at once aswell like:-
+npm i redux react-redux formik --save yup --save axios
+
+
+
+either way, the remaining code are the same.
+
+
+
+
+				To Install React-Router Dom
+
+Documentation:- https://www.npmjs.com/package/react-router-dom
+
+Install:- npm install react-router-dom
+or : npm i react-router-dom
+
+
+Likewise, we can install many packages like for bootstrap or tailwind css etc.
+
+
+react-router-dom enables us to Switch In Between Different Pages.
+In Local Host
+LocalHost:3000/First Displays Page Named First and
+LocalHost:3000/Second Displays Page Named Second
+
+
+
+
+				To Install React Slick
+
+Documentation:- https://react-slick.neostack.com/
+
+Install:- npm install react-slick --save
+or : npm i react-slick --save
+
+
+
+
+
+react-slick enables us to Get related items in search Pages.
+Say in ebay, we searched new iphone
+react slick then helps us to get new similar items to it automatically.
+
+
+(NOT NECESSARY)   FOR ISSUES:-
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+
+
+
+				To Install Formik and Yup
+
+Documentation:-https://formik.org/docs/overview
+
+				To Install Formik:-
+Install:- npm install formik --save
+or : npm i formik --save
+
+
+				To Install Yup:-
+Install:- npm install yup --save
+or : npm i --save
+
+Formik and Yup enables us to validate the form in REACT.JS
+
+
+
+
+				To Install Axios
+
+Documentation:-https://www.npmjs.com/package/axios
+
+
+Install:- npm install axios
+or : npm i axios
+
+Axios are used to fetch external data from backend
+
+
+
+
+				To Generate Fake API for Testing
+
+Link:-https://jsonplaceholder.typicode.com/
+
+Application Programming Interfaces (APIs) are constructs made available in programming languages to allow developers to create complex functionality more easily.
+This has fake database that is used for testing.
+
+
+
+
+				To Install Redux and React Redux
+
+
+				To install redux
+
+Documentation:- https://redux.js.org/introduction/getting-started
+
+
+Install:- npx create-react-app my-app --template redux
+		This is to create new react app and add the redux there.
+
+
+To install in the existing react app:- npm install @reduxjs/toolkit
+
+
+installation:- npm install redux
+
+Redux is a predictable state container for JavaScript apps.
+
+It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.
+
+You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), but has a large ecosystem of addons available.
+
+
+
+
+				To Install react redux
+
+Documentation:- https://react-redux.js.org/introduction/getting-started
+
+Install:- npx create-react-app my-app --template redux 
+	This Is To create new app and add redux
+
+
+If Installing in existing app:- npm install react-redux
+
+
+React Redux is the official React UI bindings layer for Redux. It lets your React components read data from a Redux store, and dispatch actions to the store to update state.
+
+
+
+				To Install Persist
+
+Install:- npm install persist
+
+
+We can use localStorage and URL params to persist the App state in a React Application.
+
+
+
+				To Install Redux Persist
+
+Documentation:- https://www.npmjs.com/package/redux-persist
+
+Install:- npm install redux-persist
+
+
+Redux Persist Helps to store in local storage. We can Say  It AS THE EXACT OPPOSTE OF AXIOS.
+It Helps to store in Local Storage of LocalHost i.e in browser.
+Inspect->Application->LocalHost Root
+
+
+
+				To Install Material UI:-
+
+Code:- 
+// with npm
+npm install @mui/material @emotion/react @emotion/styled
+
+// with yarn
+yarn add @mui/material @emotion/react @emotion/styled
+
+
+Material-UI is simply a library that allows us to import and use different components to create a user interface in our React applications. This saves a significant amount of time since the developers do not need to write everything from scratch.
+
+GOOGLE ALSO USES MATERIAL UI
+
+
+Documentation:- https://mui.com/getting-started/installation/#npm
+
+
+
+
+				To Install SVG of Material UI:-
+// with npm
+npm install @mui/icons-material
+
+You can also use Content Delivery Network (C.D.N)
+
+Documentation:- https://mui.com/getting-started/installation/#npm
+
+
+
+
+				To Install Material UI Syle:-
+
+Material UI Styles via Installation
+To install and save in your package.json dependencies, run:
+
+// with npm
+npm install @mui/styles
+
+// with yarn
+yarn add @mui/styles
+
+
+
+
+				To Install React Thunk
+Code:-
+npm i redux-thunk
+
+
+Documentation:- https://www.npmjs.com/package/redux-thunk
+
+It is a middleware that helps to send value in redux devtools extension.
+
+Redux Thunk is a middleware that lets you call action creators that return a function instead of an action object.
+
+Why Needed? With a plain basic Redux store, you can only do simple synchronous updates by dispatching an action. Middleware extends the store's abilities, and lets you write async logic that interacts with the store.
+
+
+
+
+				To InstallRedux-Devtools-Extension
+
+Code:-
+npm install --save redux-devtools-extension
+
+Documentation:- https://www.npmjs.com/package/@redux-devtools/core#browser-extension
+
+
+It helps to check states of redux from browser.
+
+Redux-Devtools provide us debugging platform for Redux apps. It allows us to perform time-travel debugging and live editing. Some of the features in official documentation are as follows − It lets you inspect every state and action payload. It lets you go back in time by “cancelling” actions.
+
+ALSO, NEED TO INSTALL REDUX DEVTOOL EXTENSION IN GOOGLE
+
+
+
+
+				To Install Redux-toastify
+Code:- 
+npm install --save react-toastify
+
+Documentation:- https://www.npmjs.com/package/react-toastify
+
+It helps to show notifications like pop-ups in React.
+
+Image result for react toastify
+The React-Toastify package allows the developer to show toasts to display a message and piece of information to the user for a certain period of time. 
+
+
+WE ALCO NEED ITS CSS
+TO PASTE:-
+import 'react-toastify/dist/ReactToastify.css'; //react-toast CSS
+
+
+
+
+
+				To Install Countries List
+Code:-
+npm install countries-list
+
+Documentation:- https://www.npmjs.com/package/countries-list
+
+It shows the list of countries
+
+Languages list only contains languages used in Countries data. Full list of known languages is exported as languagesAll from ./dist/languages.all.json.
+
+
+
+
+				To Install Stripe/Readt-Stripe-JS and Stripe/Stripe-JS
+
+Code:- npm install @stripe/react-stripe-js @stripe/stripe-js
+
+Documentation:- https://www.npmjs.com/package/@stripe/react-stripe-js
+
+React Stripe. js is a thin wrapper around Stripe Elements. It allows you to add Elements to any React app.

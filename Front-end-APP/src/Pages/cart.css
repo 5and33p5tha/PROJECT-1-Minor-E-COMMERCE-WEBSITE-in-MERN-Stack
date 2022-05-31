@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box !important;
+  margin: 0 !important;
+}
+
+.mytable {
+  min-height: 500px !important;
+  /* In Table, Height and Minimum Height is same unlike Divs which have fixed height */
+  /* In Case of table, the height increases automatically depending on content. It will try to occupy fixed height but after certain additions, the height will increase. */
+}

@@ -1,0 +1,9 @@
+node_modules
+.env
+
+
+
+
+
+In ExpressJS, There is no system of comments, so just write it as it is.
+These Files Will Be Ignored When Uploading To Git

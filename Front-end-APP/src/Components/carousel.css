@@ -1,0 +1,20 @@
+/* NOTE:- FOR ALL HTML ELEMENTS LIKE DIV, H1, ETC, WE DONT NEED TO USE . AS IN .DIV{}, WE USE DIV{} */
+
+.carousel_container {
+  height: 600px !important;
+  overflow: hidden !important;
+}
+
+.carousel-inner {
+  height: 600px !important;
+}
+
+.carousel-item {
+  height: 600px !important; /*THIS IS SAME AS HEIGHT: 100% AND CAN BE WRITTEN SO AS CAROUSEL-ITEM IS INSIDE THE DIV CAROUSEL INNER*/
+  width: 100% !important;
+}
+
+.carousel-item img {
+  height: 100% !important;
+  width: 70% !important;
+}
