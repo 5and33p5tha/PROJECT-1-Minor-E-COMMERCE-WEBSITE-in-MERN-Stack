@@ -46,8 +46,8 @@ Code:- FRONTEND_URL = 'http://localhost:3000'
 
 
 
-STRIPE_API_KEY = "pk_test_kjsalfopusdfumasdfunoanfoaoiusdfaomsfuamfoiuafwmio22jh2k389wejh23h4k89fsadfhj98dsfsdifoi2i13lk9kajs"
-STRIPE_SECRET_KEY = "sk_test_KJKLJs9d8kjJLKDJF90lkjdfso23lkjdfoKLJSL0932jljdfklj23lkjlkjLIKJHDFH7987JKjkhdfksf87987df87sdfk2h3jk"
+STRIPE_API_KEY = "pk_testasjfjsdfsf898sdfnj4jj3k5jkJLKJSD(89080JKKJLKJ989085345345jljljfds9890809JLKJLjsdlkfjkjsdj25kjkj890js"
+STRIPE_SECRET_KEY = "sk_test_KLJLSDJF34234908sdfjsdfj9824jkljfd890JLKJKLJFKLSDJFL94290442jlkwdfju902kljdslkf9289rkljr2LKJKLJej9jk"
 
 PUT Publishable Key KEY in STRIPE API KEY And Secret Key In STRIPE SECRET KEY From Dashboard after logging into stripe.com
 

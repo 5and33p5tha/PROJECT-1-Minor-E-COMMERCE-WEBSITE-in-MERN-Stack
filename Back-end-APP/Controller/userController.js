@@ -298,10 +298,13 @@ exports.userSignin = async (req, res) => {
   // expire : means expire after this much time in seconds
 
   // THE FOLLOWING CODE WILL Return information to front end
-  const { _id, name, role } = loginuser; //This is de-structuring done so that _id, name and isAdmin can be used instead of all.
+  const { _id, first_name, last_name, role } = loginuser; //This is de-structuring done so that _id, name and isAdmin can be used instead of all.
   //Else, It will take all Like:-
   // id, name, email, role, hashed_password, etc.
-  return res.json({ token, loginuser: { name, email, role, _id } });
+  return res.json({
+    token,
+    loginuser: { first_name, last_name, email, role, _id },
+  });
 
   //To DO Without De-Structuring:-
   //return res.json({token, name:user.name, email:user.email, id:user._id

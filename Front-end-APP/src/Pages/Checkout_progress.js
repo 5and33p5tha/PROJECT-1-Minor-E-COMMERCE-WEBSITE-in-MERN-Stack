@@ -12,7 +12,9 @@ const Checkout_progress = ({ confirmOrder, Shipping, Payment }) => {
           </Link>
         ) : (
           //If Confirm Order is not passed/given
-          <Link to="/checkout">
+          <Link to="#">
+            {" "}
+            {/* When Button is disabled disable link or rather link to same page */}
             <button className="btn btn-info disabled">Confirm Order</button>
           </Link>
         )}
@@ -22,7 +24,8 @@ const Checkout_progress = ({ confirmOrder, Shipping, Payment }) => {
             <button className="btn btn-success">Shipping</button>
           </Link>
         ) : (
-          <Link to="/shipping">
+          <Link to="#">
+            {/* When Button is disabled disable link or rather link to same page */}
             <button className="btn btn-success disabled">Shipping</button>
           </Link>
         )}
@@ -32,7 +35,9 @@ const Checkout_progress = ({ confirmOrder, Shipping, Payment }) => {
             <button className="btn btn-danger">Payment</button>
           </Link>
         ) : (
-          <Link to="/payment">
+          <Link to="#">
+            {" "}
+            {/* When Button is disabled disable link or rather link to same page */}
             <button className="btn btn-danger disabled">Payment</button>
           </Link>
         )}

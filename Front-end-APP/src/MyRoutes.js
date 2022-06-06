@@ -42,17 +42,24 @@ import axios from "axios";
 import { API } from "./config";
 
 //payment
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+import PaymentElement from "./Pages/PaymentElement";
+import PaymentSuccess from "./Pages/PaymentSuccess";
+//REMOVED AS UPDATED TO LATEST MODULE (REACT-ROUTER DOM UPDATED)
+//We have to do these in a separate page now and define normal route below
+// import { Elements } from "@stripe/react-stripe-js";
+// import { loadStripe } from "@stripe/stripe-js";
 
 const MyRouter = () => {
-  const [stripeAPIkey, setStripeAPIkey] = useState("");
-  useEffect(() => {
-    async function getStripeApiKey() {
-      const { data } = await axios.get(`${API}/stripeapikey`);
-      setStripeAPIkey(data.stripeAPIkey);
-    }
-  });
+  // const [stripeAPIkey, setStripeAPIkey] = useState("");
+  // useEffect(() => {
+  //   async function getStripeApiKey() {
+  //     const { data } = await axios.get(`${API}/stripeapikey`);
+  //     setStripeAPIkey(data.stripeAPIkey);
+  //   }
+  // });
+  //REMOVED AS UPDATED TO LATEST MODULE (REACT-ROUTER DOM UPDATED)
+  //We have to do these in a separate page now and define normal route below
+
   return (
     <Router>
       <Navbar />
@@ -123,14 +130,17 @@ const MyRouter = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/shipping" element={<Shipping />} />
-
-          {stripeAPIkey && (
-            //Elements of Stripe = Card Info, Card No, Card Expiry Date, etc
-            <Elements stripe={loadStripe(stripeAPIkey)}>
-              {/* If stripeAPIkey comes from backend and Elements of Card are loaded, ONLY THEN SHOW THE ROUTE */}
-              <Route path="/payment" element={<Payment />} />
-            </Elements>
-          )}
+          {/* <Route path="/payment" element={<Payment/>} /> THIS SHOULD BE BOUND BY StripeAPIKey Condition as Follows*/}
+          {/* {stripeAPIkey && ( */}
+          {/* //Elements of Stripe = Card Info, Card No, Card Expiry Date, etc */}
+          {/* <Elements stripe={loadStripe(stripeAPIkey)}> */}
+          {/* If stripeAPIkey comes from backend and Elements of Card are loaded, ONLY THEN SHOW THE ROUTE */}
+          <Route path="/payment" element={<PaymentElement />} />{" "}
+          {/* Updated!!!, Now We Create This Page And Define It There */}{" "}
+          {/* This is our custom route to u=our defined page */}
+          {/* </Elements> */}
+          {/* )} */}
+          <Route path="/paymentsuccess" element={<PaymentSuccess />} />
         </Route>
       </Routes>
       <Footer />

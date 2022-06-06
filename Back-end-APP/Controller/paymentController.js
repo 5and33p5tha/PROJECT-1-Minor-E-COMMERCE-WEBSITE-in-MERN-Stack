@@ -2,7 +2,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 // payment process
 exports.processPayment = async (req, res) => {
-  const paymentIntent = await stripe.paymentIntent.create({
+  const paymentIntent = await stripe.paymentIntents.create({
     //Payment Initiallization
 
     //The Following values comes from frontend i.e via req
@@ -18,12 +18,11 @@ exports.processPayment = async (req, res) => {
   }); //Send the client secret to the frontend to complete the payment
 };
 
-
 //To Connect Front End With Stripe i.e Send Stripe Key to Front End
 exports.sendStripeKey = (req, res) => {
-    res.status(200).json({
-        success: true,
-        stripeAPIkey: process.env.STRIPE_API_KEY,
-        //While Connecting with front end, we need to match the name stripeAPIkey
-      }); //Send the client secret to the frontend to complete the payment
-}
+  res.status(200).json({
+    success: true,
+    stripeAPIkey: process.env.STRIPE_API_KEY,
+    //While Connecting with front end, we need to match the name stripeAPIkey
+  }); //Send the client secret to the frontend to complete the payment
+};

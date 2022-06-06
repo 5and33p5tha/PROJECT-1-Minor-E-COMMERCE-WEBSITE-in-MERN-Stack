@@ -51,6 +51,7 @@ const Login = () => {
         } else {
           // setRedirect(true);
           authenticate(data, () => setRedirect(true));
+          console.log(data);
           //auth
         }
       })

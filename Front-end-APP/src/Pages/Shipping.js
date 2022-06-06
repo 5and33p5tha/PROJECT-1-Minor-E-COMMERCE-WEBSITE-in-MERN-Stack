@@ -81,11 +81,24 @@ const Shipping = () => {
   const calculate_total_price = () => {
     let prices = cart_items.map((item) => item.quantity * item.product_price);
     let total_price = prices.reduce((acc, cur) => acc + cur);
+    //Adding Session Storage Here
+    sessionStorage.setItem("orderInfo", JSON.stringify(total_price));
     return total_price;
   };
 
   //Function To Save Shipping Info
   const saveShippingInfoHandler = () => {
+    //TO SAVE IT IN SESSION STORAGE , SESSION STORAAGE IS SIMILAR TO LOCAL STORAGE BUT IT IS ONLY FOR SESSION, I.E IT DISSAPPERS AFTER LOGGING OUT, UNLIKE LOCAL STORAGE IT DOES NOT DISAPPEAR AFTER REFRESHING THE PAGE
+    //These Lines Are Not Needed Here As WE HAVE SET IT IN total_price
+    // sessionStorage.setItem(
+    //SESSION STORAGE IS ONLY FOR A SESSION
+    //   "orderInfo", //we are gonna save the total price here in orderInfo.
+    //As total price is already defined in checkout aswell, we can do it in checkout page aswell
+    //We need total price for payment
+    //   JSON.stringify({ calculate_total_price }) //Stringify converts Javascript Value into Object Object Notations
+    // );
+    //orderInfo is JUST THE NAME WE HAVE SET HERE
+
     return dispatch(saveShippingInfo(shippingAddress));
   };
 
@@ -103,6 +116,7 @@ const Shipping = () => {
         <div className="col-md-9 p-5">
           <Checkout_progress confirmOrder Shipping className="my-3" />
           {/*confirmOrder CALLS THE CONFIRM ORDER CONDITION FROM CHECKOUT PROGRESS */}
+          {/* shipping CALLS THE shipping CONDITION FROM CHECKOUT PROGRESS */}
           <div className="container mx-auto my-3 p-5">
             <label>Address 1</label>
             <br />
@@ -113,7 +127,7 @@ const Shipping = () => {
               placeholder="Eg: Jamal, Kantipath"
               id="street1"
               onChange={handleChange("street1")}
-              value={shippingAddress.street1}
+              value={street1} //Need to perform Object De-Structuring First
             />
             {/* WHAT WE ARE MAKING IS DELIVERY WITHIN SAME CITY. SO COMMON CITY BUT DIFFERENT DELIVERY LOCATION */}
             <label htmlFor="street2">Shipping Address 2</label>
@@ -123,7 +137,7 @@ const Shipping = () => {
               placeholder="Eg: Amritmarg, Thamel"
               id="street2"
               onChange={handleChange("street2")}
-              value={shippingAddress.street2}
+              value={street2} //Need to perform Object De-Structuring First
             />
             <label htmlFor="city">City:</label>
             <input
@@ -132,7 +146,7 @@ const Shipping = () => {
               placeholder="Eg: Kathmandu"
               id="city"
               onChange={handleChange("city")}
-              value={shippingAddress.city}
+              value={city} //Need to perform Object De-Structuring First
             />
             <label htmlFor="country">Country</label>
             <select
@@ -157,7 +171,7 @@ const Shipping = () => {
               className="form-control"
               id="phone"
               onChange={handleChange("phone")}
-              value={shippingAddress.phone}
+              value={phone} //Need to perform Object De-Structuring First
             />
             {/* we can write input type as text if we want to use the country extension aswell */}
 
@@ -229,7 +243,7 @@ Say, acc = [{samsung, q:5, p:13000},
               {calculate_total_price()}
             </b>
           </h4>
-          <hr className="my-3" />{" "}
+          <hr className="my-3" />
           {/*HR = HORIZONTAL RULE, IT WILL GIVE A LINE */}
           <Link to="/payment">
             <button className="btn btn-success">Proceed to Payment</button>

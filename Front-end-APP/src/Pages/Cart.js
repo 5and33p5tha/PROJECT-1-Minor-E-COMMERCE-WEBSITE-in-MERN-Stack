@@ -33,7 +33,7 @@ const Cart = () => {
       return; //i.e. return from function without doing any work
     }
     dispatch(addItemsToCart(id, new_quantity));
-    toast.success(`count has been updated`);
+    toast.warning(`count has been updated`);
   };
 
   const reduceFromCart = (id, quantity) => {
@@ -43,7 +43,7 @@ const Cart = () => {
       return;
     }
     dispatch(addItemsToCart(id, new_quantity)); //same function as in plus
-    toast.success(`count has been decreased`);
+    toast.error(`count has been decreased`);
   };
 
   return (
@@ -206,7 +206,7 @@ const Cart = () => {
               </tr>
             ))}
             <tr>
-              <td>
+              <td colSpan={5}>
                 <Link to="/checkout">
                   <button className="btn btn-info">Proceed to Checkout</button>
                 </Link>

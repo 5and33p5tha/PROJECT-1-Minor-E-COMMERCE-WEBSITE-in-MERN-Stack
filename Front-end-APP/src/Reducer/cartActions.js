@@ -59,19 +59,20 @@ export const removeItemFromCart = (id) => async (dispatch, getState) => {
   );
 };
 
-export const saveShippingInfo = (shipping_info) => (dispatch, getState) => {
-  //As Shipping Info Is Not In Backend Before i.e initially, so we dispatch directly
-  //So
-  dispatch({
-    type: SAVE_SHIPPING_INFO,
-    payload: {
-      // {shipping_info}, //Sending Shipping Info as object //NOT NEEDED AS ALREADY AN OBJECT ABOVE
-      //SO:-
-      shipping_info: shipping_info,
-    },
-  });
-  localStorage.setItem(
-    "shipping_info",
-    JSON.stringify(getState().cart.shipping_info) //save shipping info in cart
-  );
-};
+export const saveShippingInfo =
+  (shipping_info) => async (dispatch, getState) => {
+    //As Shipping Info Is Not In Backend Before i.e initially, so we dispatch directly
+    //So
+    dispatch({
+      type: SAVE_SHIPPING_INFO,
+      payload: {
+        // {shipping_info}, //Sending Shipping Info as object //NOT NEEDED AS ALREADY AN OBJECT ABOVE
+        //SO:-
+        shipping_info: shipping_info,
+      },
+    });
+    localStorage.setItem(
+      "shipping_info",
+      JSON.stringify(getState().cart.shipping_info) //save shipping info in cart
+    );
+  };

@@ -41,7 +41,7 @@ import { isAuthenticated } from "../Auth";
 
 const AdminRoute = () => {
   return isAuthenticated() && isAuthenticated().loginuser.role === 1 ? (
-    <Outlet />
+    <Outlet /> //If user is authenticated, send same component in component i.e //If sign in -> same page, else, Sign In Page
   ) : (
     <Navigate to="/Login" />
   );

@@ -3,6 +3,7 @@ import AdminSidebar from "../AdminSidebar";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { deleteProductFromFrontAPI, getallproducts } from "./ProductAPI";
+import { Link } from "react-router-dom";
 
 const Products_In_Admin_Page = () => {
   const [products, setProducts] = useState([]); //As Product is an object
@@ -153,9 +154,12 @@ const Products_In_Admin_Page = () => {
                       {/* For Count_In_Stock:- */}
                       <td>{item.Count_In_Stock}</td>
                       <td>
-                        <button className="btn btn-warning">
-                          View Details
-                        </button>
+                        <Link to={`/product/details/${item._id}`}>
+                          {/* Link used here to pass to products details page. WE CAN ALSO USE USE NAVIGATE WITHIN ONCLICK FUNCTION */}
+                          <button className="btn btn-warning">
+                            View Details
+                          </button>
+                        </Link>
                       </td>
                     </tr>
                   );
