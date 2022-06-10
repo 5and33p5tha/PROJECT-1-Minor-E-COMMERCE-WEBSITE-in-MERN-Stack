@@ -7,7 +7,7 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import Checkout_progress from "./Checkout_progress";
 import { useElements } from "@stripe/react-stripe-js";
@@ -15,12 +15,14 @@ import { isAuthenticated } from "../Components/Auth";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import { API } from "../config";
+import { createOrder } from "../Reducer/orderActions";
 
 const Payment = () => {
   const navigate = useNavigate();
   const { loginuser, token } = isAuthenticated();
   const stripe = useStripe();
   const Elements = useElements();
+  const dispatch = useDispatch();
   //Axios Vs Fetch
   //For Axios, Define Function First and Then Call
   //For fetch, use fetch and we can define function later
@@ -50,6 +52,20 @@ const Payment = () => {
     let prices = cart_items.map((item) => item.quantity * item.product_price);
     let total_price = prices.reduce((acc, cur) => acc + cur);
     return total_price;
+  };
+
+  //To Save Order in Backend, We need to send data and we send it via here
+  const order = {
+    orderItems: cart_items,
+    shippingAddress:
+      shipping.street1 + "," + shipping.city + ", " + shipping.country, //Concatinating Multiple fields as SINGLE FIELD NAMED SHIPPING ADDRESS 1 IN BACKEND, NO COUNTRY, NO CITY, ETC.
+    shippingAddress2:
+      shipping.street2 + "," + shipping.city + ", " + shipping.country, //Concatinating Multiple fields as SINGLE FIELD NAMED SHIPPING ADDRESS 2 IN BACKEND, NO COUNTRY, NO CITY, ETC.
+    // city:shipping_info.city,
+    // zip:shipping_info.zip,
+    // country:shipping_info.country,
+    phone: shipping.phone,
+    user: loginuser._id,
   };
 
   //If we want to show Shipping Details and Order Details, We Do the following
@@ -103,11 +119,14 @@ const Payment = () => {
       } else {
         if (result.paymentIntent.status === "succeeded") {
           //the paymentIntent.status is inside the result of the above code having confirmCartPayment via stripe:-
-          // order.paymentInfo ={
-          //     id: result.paymentIntent.id,
-          //     status: result.paymentIntent.status
-          // }
-          // dispatchEvent(createOrder(order))
+
+          //In Payment Success Case
+          order.paymentInfo = {
+            id: result.paymentIntent.id,
+            status: result.paymentIntent.status,
+          };
+          // dispatchEvent(createOrder(order)) //This is false as we called it without defining const dispatch = useDispatch()
+          dispatch(createOrder(order));
           localStorage.removeItem("cart_items");
           // return <Navigate to="/payment_success" />;
           //Instead of above code, we can also use the navigate as below

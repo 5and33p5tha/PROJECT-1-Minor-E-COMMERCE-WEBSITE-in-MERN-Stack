@@ -44,6 +44,7 @@ import { API } from "./config";
 //payment
 import PaymentElement from "./Pages/PaymentElement";
 import PaymentSuccess from "./Pages/PaymentSuccess";
+import OrderDetails from "./Pages/OrderDetails";
 //REMOVED AS UPDATED TO LATEST MODULE (REACT-ROUTER DOM UPDATED)
 //We have to do these in a separate page now and define normal route below
 // import { Elements } from "@stripe/react-stripe-js";
@@ -135,12 +136,13 @@ const MyRouter = () => {
           {/* //Elements of Stripe = Card Info, Card No, Card Expiry Date, etc */}
           {/* <Elements stripe={loadStripe(stripeAPIkey)}> */}
           {/* If stripeAPIkey comes from backend and Elements of Card are loaded, ONLY THEN SHOW THE ROUTE */}
-          <Route path="/payment" element={<PaymentElement />} />{" "}
-          {/* Updated!!!, Now We Create This Page And Define It There */}{" "}
+          <Route path="/payment" element={<PaymentElement />} />
+          {/* Updated!!!, Now We Create This Page And Define It There */}
           {/* This is our custom route to u=our defined page */}
           {/* </Elements> */}
           {/* )} */}
           <Route path="/paymentsuccess" element={<PaymentSuccess />} />
+          <Route path="/orderdetails/:order_id" element={<OrderDetails />} />
         </Route>
       </Routes>
       <Footer />

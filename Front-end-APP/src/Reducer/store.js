@@ -2,6 +2,11 @@ import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import cartReducer from "./cartReducer";
+import {
+  myOrderReducer,
+  newOrderReducer,
+  orderDetailsReducer,
+} from "./orderReducer";
 
 //PREVIOUSLY, THIS INITIALSTATE WAS DEFINED IN REDUCER, WE CAN DEFINE IT HERE ASWELL
 const initialState = {
@@ -34,6 +39,9 @@ const initialState = {
 //combining reducers
 const reducer = combineReducers({
   cart: cartReducer,
+  newOrder: newOrderReducer, //i.e create new order
+  myOrder: myOrderReducer, //i.e personal users orders
+  orderDetails: orderDetailsReducer, //i.e user order details
 });
 
 //using middleware
