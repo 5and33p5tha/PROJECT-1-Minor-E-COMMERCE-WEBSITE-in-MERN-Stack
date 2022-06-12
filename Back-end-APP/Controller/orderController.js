@@ -215,7 +215,8 @@ exports.deleteOrder = (req, res) => {
     .then(async (deleteorder) => {
       //ASYNC ORDER I.E HOLD ORDER TO AWAIT ORDERITEMS I.E ORDER ITEMS
       if (deleteorder) {
-        await deleteorder.OrderItems.map(async (deleteorderitems) => {
+        await deleteorder.OrderItems.map(async (deleteorderitem) => {
+          //Inplace of (deleteorderitem), we can write orderItem
           //OrderItems = Model
           await OrderItems.findByIdAndRemove(deleteorderitem); //OrderItems = Model
 

@@ -52,17 +52,21 @@ export const createOrder = (order) => async (dispatch, getState) => {
 
 //Personal Users Orders
 //My Order Is In Array, as multiple orders
-export const myOrders = () => async (dispatch) => {
+export const myOrders = () => async (dispatch, getState) => {
   //since this function takes from local storage, so no need to pass id in myOrders(id)
   const { loginuser, token } = isAuthenticated();
   try {
     dispatch({ type: MY_ORDER_REQUEST });
     const config = {
       headers: {
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
     const { data } = await axios.post(`${API}/userorder/${loginuser._id}`);
+    // await fetch(`${API}/userorder/${user._id}`,{
+    //     method:"GET"
+    // })
     // console.log('data',data)
     dispatch({
       type: MY_ORDER_SUCCESS,
@@ -85,8 +89,8 @@ export const clearErrors = () => async (dispatch) => {
 
 export const orderDetails = (id) => async (dispatch) => {
   //As we take id from params, and since this is not in local storage, we need to pass id here in orderDetails(id)
-  console.log(id);
   const { token } = isAuthenticated();
+  console.log(id);
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
 
@@ -96,7 +100,7 @@ export const orderDetails = (id) => async (dispatch) => {
         Authorization: `Bearer ${token}`,
       },
     };
-    const { data } = await axios.post(`${API}/orderdetail/${id}`);
+    const { data } = await axios.post(`${API}/orderdetail/${id}`, config);
     console.log(data);
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
