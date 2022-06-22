@@ -1,5 +1,6 @@
 //This IS A NECESSARY STANDARD CODE FOR MONGODB
 //This is to connect database of mongodb into express app (Current App)
+//This Whole File is Node.js
 
 const mongoose = require("mongoose"); //This is to connect to mongodb
 

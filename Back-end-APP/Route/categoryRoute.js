@@ -1,5 +1,7 @@
 //This calls our created Functions made in CategoryCONTROLLER.JS
 
+//ALL PAGES WHERE const express is used is EXPRESS.js
+
 const express = require("express");
 
 //Can Also Do  const router = require("express").Router() instead of const express and const router;

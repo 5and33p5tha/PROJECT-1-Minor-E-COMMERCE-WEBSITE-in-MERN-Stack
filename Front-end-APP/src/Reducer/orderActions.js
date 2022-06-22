@@ -89,8 +89,9 @@ export const clearErrors = () => async (dispatch) => {
 
 export const orderDetails = (id) => async (dispatch) => {
   //As we take id from params, and since this is not in local storage, we need to pass id here in orderDetails(id)
+  //If Async-Await Does Not Work For route Ordertails, We Can Do after Return and <>{order && <> Put all Codes Here</>}</>
   const { token } = isAuthenticated();
-  console.log(id);
+  // console.log(id);
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
 
@@ -101,7 +102,7 @@ export const orderDetails = (id) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(`${API}/orderdetail/${id}`, config);
-    console.log(data);
+    // console.log(data);
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
       payload: data,

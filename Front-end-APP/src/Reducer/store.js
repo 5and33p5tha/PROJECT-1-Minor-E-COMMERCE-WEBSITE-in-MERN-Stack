@@ -36,6 +36,8 @@ const initialState = {
   },
 };
 
+//Similarly, we can do the same for order
+
 //combining reducers
 const reducer = combineReducers({
   cart: cartReducer,
@@ -49,6 +51,7 @@ const middleware = [thunk];
 
 //CREATING THE OBJECT OF REDUCER
 const store = createStore(
+  //CreateStore is cut here it has been updated
   reducer,
   initialState,
   composeWithDevTools(applyMiddleware(...middleware)) //applying middleware, NEED TO INSTALL EXTENSION IN BROWSER

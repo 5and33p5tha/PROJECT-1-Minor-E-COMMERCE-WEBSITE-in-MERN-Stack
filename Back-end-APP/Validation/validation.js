@@ -11,9 +11,12 @@ exports.validation = (req, res, next) => {
     // return res.status(400).json({ error: errors }); //WILL SHOW EVERYTHING
     // return res.status(400).json({ error: errors.array()[0].msg }); //WILL SHOW IN ARRAY AND SHOW ONLY 1 I.E 1ST INDEX AND ONLY SHOW MSG
     // return res.status(400).json({ error: errors.array()[0].param }); //WILL SHOW IN ARRAY AND SHOW ONLY 1 I.E 1ST INDEX AND PARAMS SHOWS WHERE THE ERROR OCCURS
-    return res
-      .status(400)
-      .json({ error: errors.array().map((err) => err.msg) }); // SHOW ALL IN ARRAY
+    return (
+      res
+        .status(400)
+        // .json({ error: errors.array().map((err) => err.msg) }); // SHOW ALL IN SAME LINE
+        .json({ error: errors.array()[0].msg })
+    ); // SHOW ALL IN SAME LINE
   }
 };
 
@@ -60,6 +63,7 @@ exports.productCheck = [
 ];
 
 exports.userCheck = [
+  //During Registration
   check("first_name", "FIRST NAME is required").notEmpty(), //first_name here should match first_name as in model
   check("last_name", "LAST NAME is required").notEmpty(), //last_name here should match last_name as in model
   check("date_of_birth", "DOB is required").notEmpty(), //date_of_birth here should match date_of_birth as in model
@@ -71,12 +75,24 @@ exports.userCheck = [
   check("password", "Password is required")
     .notEmpty()
     .isLength({ min: 8, max: 30 }) //This Means Password Should be aminimum of 8 characters and maximum of 30 characters
-    .withMessage("Password must be between 8 and 30 characters"), //Error Message For Password
-  //Can Also Do Different MESSAGE FOR MINIMUM AND MAXIMUM
-  //FOR MINIMUM
-  //.isLength({ min: 8}) //This Means Password Should be aminimum of 8 characters and maximum of 30 characters
-  //.withMessage("Password must be MINIMUM 8 characters"); //Error Message For Password
-  //FOR MAXIMUM
-  //.isLength({ max: 30}) //This Means Password Should be aminimum of 8 characters and maximum of 30 characters
-  //.withMessage("Password must be MAXIMUM 30 characters"); //Error Message For Password
+    .withMessage("Password must be between 8 and 30 characters") //Error Message For Password
+    //Can Also Do Different MESSAGE FOR MINIMUM AND MAXIMUM
+    //FOR MINIMUM
+    //.isLength({ min: 8}) //This Means Password Should be aminimum of 8 characters and maximum of 30 characters
+    //.withMessage("Password must be MINIMUM 8 characters"); //Error Message For Password
+    //FOR MAXIMUM
+    //.isLength({ max: 30}) //This Means Password Should be aminimum of 8 characters and maximum of 30 characters
+    //.withMessage("Password must be MAXIMUM 30 characters"); //Error Message For Password
+    //Now For Character Checks, We Can Write The Following.
+    //   .matches(/[a-z]/).withMessage('password must contain at least 1 lowercase character')
+    .matches(/[A-Z]/)
+    .withMessage("password must contain at least 1 uppercase character")
+    .matches(/[0-9]/)
+    .withMessage("password must contain at least 1 number")
+    .matches(/[\-_!@#$%^&*]/)
+    .withMessage("password must contain at least 1 special character")
+    .isLength({ min: 8 })
+    .withMessage("password must be at least 8 characters")
+    .isLength({ max: 30 })
+    .withMessage("password must not be more than 30 characters"),
 ];

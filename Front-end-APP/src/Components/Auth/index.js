@@ -76,7 +76,7 @@ export const SignIn = (user) => {
 // TO Perform SIGNIN and Save DATA IN LOCAL STORAGE IF SUCCESSFUL
 //This Was Not Done Before In Above Functions
 export const authenticate = (data, next) => {
-  localStorage.setItem("jwt", JSON.stringify(data));
+  localStorage.setItem("jwt", JSON.stringify(data)); //jwt is just a name here to save in local storage
   next();
 };
 
@@ -84,7 +84,7 @@ export const authenticate = (data, next) => {
 // i.e Separate User And Admin
 export const isAuthenticated = () => {
   if (localStorage.getItem("jwt")) {
-    return JSON.parse(localStorage.getItem("jwt"));
+    return JSON.parse(localStorage.getItem("jwt")); //parse Creates STRING INTO OBJECT
   } else {
     return false;
   }
@@ -94,7 +94,7 @@ export const isAuthenticated = () => {
 export const SIGNOUT = (next) => {
   //AS Auto Redirect Is Not Working As For This, via Next i.e Our Custom Defined Call Back Function
   //We Can Write:- export const SIGNOUT = () => {
-  localStorage.removeItem("jwt");
+  localStorage.removeItem("jwt"); //removeItem is inbuilt function
   next();
 };
 

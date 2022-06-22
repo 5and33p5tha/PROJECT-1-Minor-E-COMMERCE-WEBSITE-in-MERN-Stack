@@ -69,7 +69,7 @@ const Categories = ({ passing_handleFilters }) => {
             <input
               className="form-check-input mt-1 me-1"
               type="checkbox"
-              onChange={() => handleToggle(category._id)}
+              onChange={() => handleToggle(category._id)} //(category._id will put c for this function)
               value={category._id} //value is {"category._id"} as EACH BUTTON CLICKED SHOW SHOW THAT CATEGORY I.E PHONE BOX SHOWULD SHOW PHONE CATEGORY FROM BACKEND
               //IF value={"category._id"} means passing string, WITHOUT QUOTE MEANS PASSING VALUE
               id={category._id} //PASSING VALUE TO ID

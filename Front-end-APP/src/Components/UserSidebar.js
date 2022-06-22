@@ -21,13 +21,13 @@ export const UserSidebar = () => {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <Link to="/" className="nav-link active" aria-current="page">
-              Home
+            <Link to="#" className="nav-link active" aria-current="page">
+              My Orders
             </Link>
           </li>
-          <li>
-            <Link to="#" className="nav-link text-white">
-              My Orders
+          <li style={{ paddingTop: "20em" }}>
+            <Link to="/" className="nav-link text-white">
+              Go Back To Home
             </Link>
           </li>
         </ul>

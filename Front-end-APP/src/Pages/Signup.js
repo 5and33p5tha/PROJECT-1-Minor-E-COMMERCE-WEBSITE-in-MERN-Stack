@@ -175,6 +175,32 @@ const Signup = () => {
     // }
   };
 
+  //For Confirm password
+  const confirm = (event) => {
+    const confirmpassword = event.target.value;
+    if (confirmpassword !== password) {
+      setValues({ ...values, error: "Password does not match" });
+      setSubmit(false);
+    } else {
+      setSubmit(true);
+    }
+  };
+
+  //To Stop IF Passwod Does Not Match
+  const [submit, setSubmit] = useState(false);
+
+  //For I Accept All......
+  const Accept = (e) => {
+    if (e.target.value == "checked") {
+      setIclick(true);
+    } else {
+      setIclick(false);
+    }
+  };
+
+  //To Stop if I Accept is not clicked
+  const [iclick, setIclick] = useState(false);
+
   return (
     <>
       {/* <div className='container-sm'> THIS WILL CREATE SMALL CONTAINER(NOT CONTAINER IN SMALL SCREEN BUT SMAL CONTAINER) */}
@@ -462,11 +488,13 @@ const Signup = () => {
                   id="floatingCPassword"
                   placeholder="Confirm Password"
                   name="cpassword"
+                  onChange={confirm}
                 />
                 <label htmlFor="floatingCPassword">Confirm Password</label>
-                <ErrorMessage name="cpassword">
+                {/* The Following ErrorMessage is of Formik and Yup, Formik to be exact */}
+                {/* <ErrorMessage name="cpassword">
                   {(msg) => <div style={{ color: "maroon" }}>{msg}</div>}
-                </ErrorMessage>
+                </ErrorMessage> */}
               </div>
               <div className="checkbox mb-3">
                 <label>
@@ -474,18 +502,29 @@ const Signup = () => {
                   <input
                     // AS FORMIK'S FORM IS COMMENTED, FIELD SHOWS ERROR SO USE INPUT INSTEAD OF FIELD
                     type="checkbox"
-                    value="remember-me"
+                    value="checked"
+                    onChange={Accept}
                   />{" "}
                   I accept all the Terms and Conditions
                 </label>
               </div>
-              <button
-                className="w-100 btn btn-lg btn-primary"
-                type="submit"
-                onClick={handleSubmit}
-              >
-                Register
-              </button>
+              {submit && iclick ? (
+                //submit and iclick are two individual conditions to be checked here.
+                <button
+                  className="w-100 btn btn-lg btn-primary"
+                  type="submit"
+                  onClick={handleSubmit}
+                >
+                  Register
+                </button>
+              ) : (
+                <button
+                  className="w-100 btn btn-lg btn-warning disabled"
+                  type="submit"
+                >
+                  Register
+                </button>
+              )}
               <br></br>
               <br />
               Already have an account? <Link to="/Login">Sign In Here</Link>

@@ -25,6 +25,7 @@ ReactDOM.render(
     {/* Here, App.js, Index.js, First .js Are All Components */}
     {/* <App /> */}
     <Provider store={store}>
+  {/* FOR COMMON STORE, HENCE WE HAVE KEPT IT IN MYROUTES  */}
       <MyRouter />
     </Provider>
     {/* <First />
