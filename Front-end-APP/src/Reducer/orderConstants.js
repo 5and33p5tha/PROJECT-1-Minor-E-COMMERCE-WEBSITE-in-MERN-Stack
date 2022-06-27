@@ -20,5 +20,5 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 //   <MyRouter />
 //   </Provider>
 //Just note this has to wrap the <MyRouter/>
-//orderActions(), BUT IN ACTUAL, ORDER ACTIONS WORKS FIRST AND SENDS TO ORDER REDUCER NA DCOMES BACK AGAIN
+//orderActions(), BUT IN ACTUAL, ORDER ACTIONS WORKS FIRST AND SENDS TO ORDER REDUCER AND COMES BACK AGAIN
 //https://redux.js.org/tutorials/essentials/part-1-overview-concepts#redux-application-data-flow
